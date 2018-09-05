@@ -1,0 +1,8 @@
+Code for linear Regression
+https://www.geeksforgeeks.org/linear-regression-python-implementation/
+
+maths formula for linear regression
+https://www.youtube.com/watch?v=DSQ2plMtbLc
+
+
+matrix solution should also be there
