@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #Reading the dataset from data
-dataset = pd.read_csv(r'data\slr09.csv')
+dataset = pd.read_csv(r'data\\slr09.csv')
 
 #Creating Dependent and Independent variables
 dataset = dataset.sort_values('X')
