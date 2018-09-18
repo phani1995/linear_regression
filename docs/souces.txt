@@ -7,7 +7,6 @@ https://www.youtube.com/watch?v=DSQ2plMtbLc
 formula direivation statiscs
 http://www.statisticshowto.com/probability-and-statistics/regression-analysis/find-a-linear-regression-equation/
 
-Dataset Sources
+Dataset Source
 http://college.cengage.com/mathematics/brase/understandable_statistics/7e/students/datasets/slr/frames/frame.html
-http://people.sc.fsu.edu/~jburkardt/datasets/regression/regression.html
-https://sci2s.ugr.es/keel/category.php?cat=reg#sub2
+
