@@ -24,7 +24,6 @@ plt.title(title)
 plt.xlabel(x_axis_label)
 plt.ylabel(y_axis_label)
 plt.show()
-plt.show()
 
 #Splitting the data into training set and test set
 X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.2)])
