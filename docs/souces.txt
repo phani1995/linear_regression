@@ -4,9 +4,8 @@ https://www.geeksforgeeks.org/linear-regression-python-implementation/
 maths formula for linear regression
 https://www.youtube.com/watch?v=DSQ2plMtbLc
 
+
+matrix solution should also be there
+
 formula direivation statiscs
 http://www.statisticshowto.com/probability-and-statistics/regression-analysis/find-a-linear-regression-equation/
-
-Dataset Source
-http://college.cengage.com/mathematics/brase/understandable_statistics/7e/students/datasets/slr/frames/frame.html
-
