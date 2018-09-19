@@ -24,11 +24,17 @@ plt.title(title)
 plt.xlabel(x_axis_label)
 plt.ylabel(y_axis_label)
 plt.show()
-plt.show()
 
+#This splitting can be dont with scikit learns test train split or manully by below code
 #Splitting the data into training set and test set
 X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.2)])
 y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.2)])
+
+# Reshaping the numpy arrays since the scikit learn model expects 2-D array in further code
+X_train_fw = np.reshape(X_train,newshape = (-1,1))
+y_train_fw = np.reshape(y_train,newshape = (-1,1))
+X_test_fw = np.reshape(X_test,newshape = (-1,1))
+y_test_fw = np.reshape(y_test,newshape = (-1,1))
 
 #------------------------------------ DATA PREPROCESSING ENDS -----------------------------#
 
@@ -50,17 +56,26 @@ c_numerator = (sigma_y*sigma_X_square)-(sigma_xy*sigma_X)
 c_denominator = (n*sigma_X_square) - math.pow(sigma_X,2)
 c = c_numerator/c_denominator
 
+#Importing the linear model from sklearn framework
+from sklearn.linear_model import LinearRegression
+lr = LinearRegression()
+lr.fit(X = X_train_fw, y = y_train_fw)
+
 #-------------------------------------- TRAINING ENDS  ------------------------------------#
 
 #------------------------------- PREDICTION AND PLOTING -----------------------------------#
 
 #Predicting the Results
-y_pred = X_test*m + c
+y_pred_stat = X_test*m + c
+y_pred_fw = lr.predict(X_test_fw)
 
 #Visualizing the Results
 plt.scatter(X_test,y_test,c='red')
-plt.plot(X_test,y_pred)
+plt.plot(X_test,y_pred_fw,c='cyan',label='framework')
+plt.plot(X_test,y_pred_stat,c='green',label='statistical formula')
+plt.scatter(X,y)
 plt.title(title)
+plt.legend()
 plt.xlabel(x_axis_label)
 plt.ylabel(y_axis_label)
 plt.show()

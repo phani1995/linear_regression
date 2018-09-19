@@ -8,17 +8,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #Reading the dataset from data
-dataset = pd.read_csv(r'data\\slr09.csv')
+dataset = pd.read_csv(r'..\\data\\prices.csv')
 
 #Creating Dependent and Independent variables
-dataset = dataset.sort_values('X')
 X = dataset['X'].values
 y = dataset['Y'].values
 
 #Visualizing the data 
+title='Linear Regression on <Dataset>'
+x_axis_label = 'X-value < The corresponding attribute of X in dataset >'
+y_axis_label = 'y-value < The corresponding attribute of X in dataset >'
 plt.scatter(X,y)
-plt.xlabel('pH of well water')
-plt.ylabel('Bicarbonate (ppm)')
+plt.title(title)
+plt.xlabel(x_axis_label)
+plt.ylabel(y_axis_label)
 plt.show()
 
 #Splitting the data into training set and test set
@@ -50,7 +53,8 @@ y_pred = lr.predict(X_test)
 #Visualizing the Results
 plt.scatter(X_test,y_test,c='red')
 plt.plot(X_test,y_pred)
-plt.xlabel('pH of well water')
-plt.ylabel('Bicarbonate (ppm)')
+plt.title(title)
+plt.xlabel(x_axis_label)
+plt.ylabel(y_axis_label)
 plt.show()
 #------------------------------ PREDICTION AND PLOTING ENDS--------------------------------#
