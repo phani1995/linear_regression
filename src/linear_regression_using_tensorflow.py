@@ -25,10 +25,9 @@ plt.xlabel(x_axis_label)
 plt.ylabel(y_axis_label)
 plt.show()
 
-
 #Splitting the data into training set and test set
-from sklearn.model_selection import train_test_split
-X_test,X_train,y_test,y_train = train_test_split(X,y, test_size = 0.8)
+X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.2)])
+y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.2)])
 
 
 # Reshaping the numpy arrays since the tensorflow model expects 2-D array in further code
@@ -42,11 +41,11 @@ y_test = np.reshape(y_test,newshape = (-1,1)).astype('float32')
 
 #--------------------------------------- TRAINING   ---------------------------------------#
 
-#Variables 
+#Variables for training 
 epochs = 1000
 learning_rate = 0.0001
 
-#Tensors
+#Tensors to build the graph
 X_tf = tf.placeholder(tf.float32,shape = (None,1),name = 'x_palceholder')
 m = tf.Variable(tf.ones([1,1]))
 c = tf.Variable(tf.ones(shape=(1,1),dtype=tf.float32),name='intercept')

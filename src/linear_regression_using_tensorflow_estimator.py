@@ -3,6 +3,7 @@
 #-------------------------------------- DATA PREPROCESSING ---------------------------------#
 
 #Imports
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import tensorflow as tf
@@ -26,16 +27,8 @@ plt.show()
 
 
 #Splitting the data into training set and test set
-from sklearn.model_selection import train_test_split
-X_test,X_train,y_test,y_train = train_test_split(X,y, test_size = 0.8)
-
-'''
-# Reshaping the numpy arrays since the tensorflow model expects 2-D array in further code
-X_train = np.reshape(X_train,newshape = (-1,1)).astype('float32')
-y_train = np.reshape(y_train,newshape = (-1,1)).astype('float32')
-X_test = np.reshape(X_test,newshape = (-1,1)).astype('float32')
-y_test = np.reshape(y_test,newshape = (-1,1)).astype('float32')
-'''
+X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.2)])
+y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.2)])
 
 #------------------------------------ DATA PREPROCESSING ENDS -----------------------------#
 
@@ -45,58 +38,42 @@ y_test = np.reshape(y_test,newshape = (-1,1)).astype('float32')
 epochs = 1000
 learning_rate = 0.0001
 
+#Feature Columns
 feature_columns = [tf.feature_column.numeric_column(key="X")]
 
-features = {'X':X_train}
-features_test = {'X':X_test}
+#Creating feature
+features_train = {'X':X_train}
+features_test  = {'X':X_test}
 
+#Creating an Input function which would return a batch dataset on every call
 def input_function(features, labels, batch_size):
-   
-    # Convert the inputs to a Dataset.
-    data = tf.data.Dataset.from_tensor_slices((dict(features), labels))
-    '''
-    #data = data.map(input_parser)
-    data = data.batch(1)
-    iterator = data.make_one_shot_iterator()
-    features, labels = iterator.get_next()
-    return {'X': features}, labels
-    '''
-    return (data.shuffle(10).batch(5).repeat().make_one_shot_iterator().get_next())
+    data = tf.data.Dataset.from_tensor_slices((dict(features), labels))     # Convert the inputs to a Dataset.
+    return (data.shuffle(10).batch(5).repeat().make_one_shot_iterator().get_next()) #Returning the batch dataset
 
-input_train = lambda: input_function(features, y_train,5)
-input_test  = lambda: input_function(features_test, y_test,5)
-
-def input_test():
-    features = {'X': X_test}
-    labels = y_test
-    return features, labels
+#Making the lambda function of train dataset
+input_train = lambda: input_function(features_train, y_train,5)
 
 # Build the Estimator.
 model = tf.estimator.LinearRegressor(feature_columns=feature_columns)
 
 # Train the model.
 model.train(input_fn = input_train, steps = epochs)
-print("----------------------------")
-print(input_train)
-print('Training Done')
 
-'''
-# Evaluate how the model performs on data it has not yet seen.
-eval_result = model.evaluate(input_fn = input_test)
-print('Evaluation Done')
-'''  
 #-------------------------------------- TRAINING ENDS  ------------------------------------#
 
 #------------------------------- PREDICTION AND PLOTING -----------------------------------#
 
-input_dict = {'X':X_test}
-predict_input_fn = tf.estimator.inputs.numpy_input_fn(input_dict, shuffle=False)
-predict_results = model.predict(input_fn=predict_input_fn)
-print(predict_results)
-y_predicted =[]
-for i, prediction in enumerate(predict_results):
+#Creating a input function for prediction
+predict_input_fn = tf.estimator.inputs.numpy_input_fn(features_test, shuffle=False)
+
+#Prediction the results
+predict_results = model.predict(input_fn=predict_input_fn) #This yeilds a python generator
+
+#Extracting the y-predicted values into a numpy array
+y_predicted = []
+for prediction in predict_results:
     y_predicted.append(prediction['predictions'])
-    
+y_predicted = np.array(y_predicted)
 
 #Visualizing the Results
 plt.scatter(X_test,y_test,c='red')
