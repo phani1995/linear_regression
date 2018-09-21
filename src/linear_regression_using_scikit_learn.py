@@ -2,19 +2,19 @@
 
 #-------------------------------------- DATA PREPROCESSING ---------------------------------#
 
-#Imports
+# Imports
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-#Reading the dataset from data
+# Reading the dataset from data
 dataset = pd.read_csv(r'..\\data\\prices.csv')
 
-#Creating Dependent and Independent variables
+# Creating Dependent and Independent variables
 X = dataset['X'].values
 y = dataset['Y'].values
 
-#Visualizing the data 
+# Visualizing the data 
 title='Linear Regression on <Dataset>'
 x_axis_label = 'X-value < The corresponding attribute of X in dataset >'
 y_axis_label = 'y-value < The corresponding attribute of X in dataset >'
@@ -24,7 +24,7 @@ plt.xlabel(x_axis_label)
 plt.ylabel(y_axis_label)
 plt.show()
 
-#Splitting the data into training set and test set
+# Splitting the data into training set and test set
 from sklearn.model_selection import train_test_split
 X_test,X_train,y_test,y_train = train_test_split(X,y, test_size = 0.8)
 
@@ -38,7 +38,7 @@ y_test = np.reshape(y_test,newshape = (-1,1))
 
 #--------------------------------------- TRAINING   ---------------------------------------#
 
-#Importing the linear model from sklearn framework
+# Importing the linear model from sklearn framework
 from sklearn.linear_model import LinearRegression
 lr = LinearRegression()
 lr.fit(X = X_train, y = y_train)
@@ -47,10 +47,10 @@ lr.fit(X = X_train, y = y_train)
 
 #------------------------------- PREDICTION AND PLOTING -----------------------------------#
 
-#Predicting the Results
+# Predicting the Results
 y_pred = lr.predict(X_test)
 
-#Visualizing the Results
+# Visualizing the Results
 plt.scatter(X_test,y_test,c='red')
 plt.plot(X_test,y_pred)
 plt.title(title)
