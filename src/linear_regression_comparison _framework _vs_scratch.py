@@ -25,8 +25,9 @@ plt.xlabel(x_axis_label)
 plt.ylabel(y_axis_label)
 plt.show()
 
-# This splitting can be dont with scikit learns test train split or manully by below code
+
 # Splitting the data into training set and test set
+# This splitting can be done with scikit learns test train split or manully by below code
 X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.2)])
 y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.2)])
 
@@ -70,6 +71,26 @@ y_pred_stat = X_test*m + c
 y_pred_fw = lr.predict(X_test_fw)
 
 # Visualizing the Results
+
+# Plotting each result individually
+plt.scatter(X_test,y_test,c='red')
+plt.plot(X_test,y_pred_fw,c='cyan',label='framework')
+plt.scatter(X,y)
+plt.title(title)
+plt.xlabel(x_axis_label)
+plt.ylabel(y_axis_label)
+plt.show()
+
+plt.scatter(X_test,y_test,c='red')
+plt.plot(X_test,y_pred_stat,c='green',label='statistical formula')
+plt.scatter(X,y)
+plt.title(title)
+plt.legend()
+plt.xlabel(x_axis_label)
+plt.ylabel(y_axis_label)
+plt.show()
+
+# Combining the results 
 plt.scatter(X_test,y_test,c='red')
 plt.plot(X_test,y_pred_fw,c='cyan',label='framework')
 plt.plot(X_test,y_pred_stat,c='green',label='statistical formula')
@@ -79,5 +100,6 @@ plt.legend()
 plt.xlabel(x_axis_label)
 plt.ylabel(y_axis_label)
 plt.show()
+
 
 #------------------------------ PREDICTION AND PLOTING ENDS--------------------------------#
