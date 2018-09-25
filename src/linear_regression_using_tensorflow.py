@@ -29,13 +29,11 @@ plt.show()
 X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.2)])
 y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.2)])
 
-
 # Reshaping the numpy arrays since the tensorflow model expects 2-D array in further code
 X_train = np.reshape(X_train,newshape = (-1,1)).astype('float32')
 y_train = np.reshape(y_train,newshape = (-1,1)).astype('float32')
 X_test = np.reshape(X_test,newshape = (-1,1)).astype('float32')
 y_test = np.reshape(y_test,newshape = (-1,1)).astype('float32')
-
 
 #------------------------------------ DATA PREPROCESSING ENDS -----------------------------#
 
@@ -49,7 +47,6 @@ learning_rate = 0.0001
 X_tf = tf.placeholder(tf.float32,shape = (None,1),name = 'x_palceholder')
 m = tf.Variable(tf.ones([1,1]))
 c = tf.Variable(tf.ones(shape=(1,1),dtype=tf.float32),name='intercept')
-
 y_actual = tf.placeholder(tf.float32,shape = (None,1),name = 'y_actual_palceholder')
 
 # Equation of line in Tensorflow

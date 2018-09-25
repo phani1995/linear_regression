@@ -40,7 +40,7 @@ learning_rate = 0.001
 # Feature Columns
 feature_columns = [tf.feature_column.numeric_column(key="X")]
 
-# Creating feature dictonaries
+# Creating feature dictionaries
 features_train = {'X':X_train}
 features_test  = {'X':X_test}
 

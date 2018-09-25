@@ -16,14 +16,9 @@ X = dataset['X'].values
 y = dataset['Y'].values
 
 # Visualizing the data 
-'''
 title='Linear Regression on <Dataset>'
 x_axis_label = 'X-value < The corresponding attribute of X in dataset >'
 y_axis_label = 'y-value < The corresponding attribute of X in dataset >'
-'''
-title='Linear Regression on Auto Insurance in Sweden Dataset'
-x_axis_label = 'Number of Claims'
-y_axis_label = 'Total Payment'
 plt.scatter(X,y)
 plt.title(title)
 plt.xlabel(x_axis_label)
