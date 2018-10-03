@@ -9,3 +9,6 @@ matrix solution should also be there
 
 formula direivation statiscs
 http://www.statisticshowto.com/probability-and-statistics/regression-analysis/find-a-linear-regression-equation/
+
+concrete strength regression 
+https://www.kaggle.com/maajdl/yeh-concret-data
