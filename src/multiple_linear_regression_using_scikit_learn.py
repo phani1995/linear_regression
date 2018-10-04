@@ -5,21 +5,34 @@
 # Imports
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import random
 
 # Reading the dataset from data
 '''
 # Concrete Dataset
-dataset = pd.read_csv(r'D:\Repositories\linear_regression\data\Concrete_Data_Yeh.csv')
+dataset = pd.read_csv(r'D:\Madhus_data\repositories\linear_regression\data\Concrete_Data_Yeh.csv')
 x_labels = ['cement','slag','flyash','water','superplasticizer','coarseaggregate','fineaggregate','age']
+y_lables = ['csMPa']
+x_labels_categorical = []
+
+# Squeezed 3D data for Visualization purpose
+x_labels = random.sample(x_labels,2)
 y_lables = ['csMPa']
 x_labels_categorical = []
 '''
 
+
 # 50_Startups dataset
-dataset = pd.read_csv(r'D:\Repositories\linear_regression\data\50_Startups.csv')
+dataset = pd.read_csv(r'D:\Madhus_data\repositories\linear_regression\data\50_Startups.csv')
 x_labels = ['R&D Spend', 'Administration', 'Marketing Spend']
 y_lables = ['Profit']
 x_labels_categorical = ['State']
+# Squeezed 3D data for Visualization purpose
+x_labels = random.sample(x_labels,2)
+y_lables = ['Profit']
+x_labels_categorical = []
+
 
 # Converting categorical data into one hot encoder
 from sklearn.preprocessing import OneHotEncoder,LabelEncoder
@@ -66,4 +79,38 @@ lr.fit(X = X_train, y = y_train)
 # Predicting the Results
 y_pred = lr.predict(X_test)
 
+if len(x_labels)==2:
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    xs = X_test[:,0]
+    ys = X_test[:,1]
+    zs = y_test
+    ax.scatter(xs, ys, zs, c='r', marker='o')
+    ax.scatter(xs, ys, y_pred, c='b', marker='^')
+    ax.set_xlabel(x_labels[0])
+    ax.set_ylabel(x_labels[1])
+    ax.set_zlabel(y_lables[0])
+    plt.show()
+    
+    
+    fig = plt.figure()
+    ax = fig.gca(projection='3d')
+    
+    # Make data.
+    X = np.arange(min(xs), max(xs),(max(xs)-min(xs))/100)
+    Y = np.arange(min(ys), max(ys),(max(ys)-min(ys))/100)
+    X, Y = np.meshgrid(X, Y)
+    Z = lr.predict(np.concatenate((X.ravel().reshape(-1,1),Y.ravel().reshape(-1,1)),axis=1)).reshape(X.shape)
+    
+    from matplotlib import cm
+    # Plot the surface.
+    surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm, linewidth=0, antialiased=False)
+    
+    # Add a color bar which maps values to colors.
+    fig.colorbar(surf, shrink=0.5, aspect=5)
+    
+    ax.set_xlabel(x_labels[0])
+    ax.set_ylabel(x_labels[1])
+    ax.set_zlabel(y_lables[0])
+    plt.show()
 #------------------------------ PREDICTION AND PLOTING ENDS--------------------------------#
