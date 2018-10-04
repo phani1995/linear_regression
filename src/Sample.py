@@ -1,44 +1,90 @@
-'''
-======================
-3D surface (color map)
-======================
+# -*- coding: utf-8 -*-
 
-Demonstrates plotting a 3D surface colored with the coolwarm color map.
-The surface is made opaque by using antialiased=False.
+#-------------------------------------- DATA PREPROCESSING ---------------------------------#
 
-Also demonstrates using the LinearLocator and custom formatting for the
-z axis tick labels.
-'''
-
-from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
-from matplotlib import cm
-from matplotlib.ticker import LinearLocator, FormatStrFormatter
+# Imports
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import tensorflow as tf
+from os import path
 
+# Reading the dataset from data
+dataset = pd.read_csv(r'..\\data\\auto_insurance.csv')
 
-fig = plt.figure()
-ax = fig.gca(projection='3d')
+# Creating Dependent and Independent variables
+X = dataset['X'].values
+y = dataset['Y'].values
 
-# Make data.
-X = np.arange(-5, 5, 0.25)
-Y = np.arange(-5, 5, 0.25)
-X, Y = np.meshgrid(X, Y)
-R = np.sqrt(X**2 + Y**2)
-Z = np.sin(R)
-
-# Plot the surface.
-surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
-                       linewidth=0, antialiased=False)
-'''
-# Customize the z axis.
-#ax.set_zlim(-1.01, 1.01)
-ax.zaxis.set_major_locator(LinearLocator(10))
-ax.zaxis.set_major_formatter(FormatStrFormatter('%.02f'))
-'''
-
-'''
-# Add a color bar which maps values to colors.
-fig.colorbar(surf, shrink=0.5, aspect=5)
-'''
+# Visualizing the data 
+title='Linear Regression on <Dataset>'
+x_axis_label = 'X-value < The corresponding attribute of X in dataset >'
+y_axis_label = 'y-value < The corresponding attribute of X in dataset >'
+plt.scatter(X,y)
+plt.title(title)
+plt.xlabel(x_axis_label)
+plt.ylabel(y_axis_label)
 plt.show()
+
+# Splitting the data into training set and test set
+X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.8)])
+y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.8)])
+
+# Reshaping the numpy arrays since the tensorflow model expects 2-D array in further code
+X_train = np.reshape(X_train,newshape = (-1,1)).astype('float32')
+y_train = np.reshape(y_train,newshape = (-1,1)).astype('float32')
+X_test = np.reshape(X_test,newshape = (-1,1)).astype('float32')
+y_test = np.reshape(y_test,newshape = (-1,1)).astype('float32')
+
+#------------------------------------ DATA PREPROCESSING ENDS -----------------------------#
+
+#--------------------------------------- TRAINING   ---------------------------------------#
+
+# Variables for training 
+epochs = 1000
+learning_rate = 0.0001
+
+# Tensors to build the graph
+X_tf = tf.placeholder(tf.float32,shape = (None,1),name = 'x_palceholder')
+m = tf.Variable(tf.ones([1,1]))
+c = tf.Variable(tf.ones(shape=(1,1),dtype=tf.float32),name='intercept')
+y_actual = tf.placeholder(tf.float32,shape = (None,1),name = 'y_actual_palceholder')
+
+# Equation of line in Tensorflow
+y_pred = tf.add(tf.matmul(X_tf,m),c)
+
+
+# Loss Function
+loss = tf.reduce_mean(tf.square((y_pred - y_actual)))
+
+
+# Creating Training step using Gradient Descent Optimizer
+training_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss)
+
+# Training 
+with tf.Session() as sess:
+    summ_writer = tf.summary.FileWriter(path.abspath(r'D:\Madhus_data\repositories\linear_regression\summaries'),sess.graph)
+    init = tf.global_variables_initializer()
+    sess.run(init)
+    for i in range(epochs):
+        # merge = tf.summary.merge_all()
+        sess.run(training_step,feed_dict= {X_tf:X_train,y_actual:y_train})
+        # summ_writer.add_summary(summary, i)
+    summ_writer.close()
+        
+#-------------------------------------- TRAINING ENDS  ------------------------------------#
+
+#------------------------------- PREDICTION AND PLOTING -----------------------------------#
+
+# Predicting the Results (the tensorflow session is still active)        
+    y_predicted = sess.run(y_pred,feed_dict= {X_tf:X_test})
+
+# Visualizing the Results
+plt.scatter(X_test,y_test,c='red')
+plt.plot(X_test,y_predicted,c='green')
+plt.title(title)
+plt.xlabel(x_axis_label)
+plt.ylabel(y_axis_label)
+plt.show()
+
+#------------------------------ PREDICTION AND PLOTING ENDS--------------------------------#

@@ -26,8 +26,8 @@ plt.ylabel(y_axis_label)
 plt.show()
 
 # Splitting the data into training set and test set
-X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.2)])
-y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.2)])
+X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.8)])
+y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.8)])
 
 #------------------------------------ DATA PREPROCESSING ENDS -----------------------------#
 
