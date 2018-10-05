@@ -23,18 +23,19 @@ x_labels_categorical = []
 x_labels = random.sample(x_labels,2)
 y_lables = ['csMPa']
 x_labels_categorical = []
-'''
 
+'''
 
 # 50_Startups dataset
 dataset = pd.read_csv(r'D:\Madhus_data\repositories\linear_regression\data\50_Startups.csv')
 x_labels = ['R&D Spend', 'Administration', 'Marketing Spend']
 y_lables = ['Profit']
 x_labels_categorical = ['State']
+
 # Squeezed 3D data for Visualization purpose
-x_labels = random.sample(x_labels,2)
-y_lables = ['Profit']
-x_labels_categorical = []
+#x_labels = random.sample(x_labels,2)
+#y_lables = ['Profit']
+#x_labels_categorical = []
 
 
 # Converting categorical data into one hot encoder
@@ -72,7 +73,7 @@ X_test,X_train,y_test,y_train = train_test_split(X,y, test_size = 0.8)
 
 # Importing the linear model from sklearn framework
 from sklearn.linear_model import LinearRegression
-lr = LinearRegression()
+lr = LinearRegression(normalize=True)
 lr.fit(X = X_train, y = y_train)
 
 #-------------------------------------- TRAINING ENDS  ------------------------------------#
@@ -83,21 +84,21 @@ lr.fit(X = X_train, y = y_train)
 y_pred = lr.predict(X_test)
 
 # Visualizing the results
-plt.scatter(np.arange(0,len(y_pred),1),y_pred,cmap = 'Sequential')
-plt.scatter(np.arange(0,len(y_pred),1),y_test,cmap = 'Sequential')
+plt.scatter(np.arange(0,len(y_pred[:10]),1),y_pred[:10],cmap = 'Sequential')
+plt.scatter(np.arange(0,len(y_test[:10]),1),y_test[:10],cmap = 'Sequential')
 plt.gca().xaxis.grid(True)
-plt.xticks(np.arange(0,len(y_pred),1))
+plt.xticks(np.arange(0,len(y_pred[:10]),1))
 plt.ylabel(y_lables[0])
 plt.xlabel('Samples')
 plt.show()
 
+# 3D visualization 
 if len(x_labels)==2:
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     xs = X_test[:,0]
     ys = X_test[:,1]
-    zs = y_test
-    ax.scatter(xs, ys, zs, c='r', marker='o')
+    ax.scatter(xs, ys, y_test, c='r', marker='o')
     ax.scatter(xs, ys, y_pred, c='b', marker='^')
     ax.set_xlabel(x_labels[0])
     ax.set_ylabel(x_labels[1])
@@ -125,4 +126,5 @@ if len(x_labels)==2:
     ax.set_ylabel(x_labels[1])
     ax.set_zlabel(y_lables[0])
     plt.show()
+    
 #------------------------------ PREDICTION AND PLOTING ENDS--------------------------------#

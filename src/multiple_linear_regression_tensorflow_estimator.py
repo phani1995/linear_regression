@@ -7,23 +7,28 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import tensorflow as tf
-#import random
+import random
+
+from mpl_toolkits.mplot3d import  Axes3D
 
 # Reading the dataset from data
 # 50_Startups dataset
-dataset = pd.read_csv(r'D:\Madhus_data\repositories\linear_regression\data\50_Startups.csv')
+dataset = pd.read_csv(r'..\data\50_Startups.csv')
 x_labels = ['R&D Spend', 'Administration', 'Marketing Spend']
 y_lables = ['Profit']
 x_labels_categorical = ['State']
 # Squeezed 3D data for Visualization purpose
-#x_labels = random.sample(x_labels,2)
-#y_lables = ['Profit']
-#x_labels_categorical = []
+x_labels = random.sample(x_labels,2)
+y_lables = ['Profit']
+x_labels_categorical = []
 
 # Creating Dependent and Independent variables
 X = dataset[x_labels]
+
 # Renaming for tensorflow scope
-X.columns = ['a', 'b','c']
+#X.columns = ['a', 'b','c']
+#For 3D Visulaization
+X.columns = ['a', 'b']
 X = X.values
 y = dataset[y_lables].values
 
@@ -41,10 +46,17 @@ learning_rate = 0.001
 
 # Feature Columns
 feature_columns = [tf.feature_column.numeric_column(key="a"),tf.feature_column.numeric_column(key="b"),tf.feature_column.numeric_column(key="c")]
+#For 3D Visulaization
+feature_columns = [tf.feature_column.numeric_column(key="a"),tf.feature_column.numeric_column(key="b")]
+
 
 # Creating feature dictionaries
-features_train = {'a':X_train[:,0],'b':X_train[:,1],'c':X_train[:,2]}
-features_test  = {'a':X_test[:,0], 'b':X_test[:,1], 'c':X_test[:,2]}
+#features_train = {'a':X_train[:,0],'b':X_train[:,1],'c':X_train[:,2]}
+#features_test  = {'a':X_test[:,0], 'b':X_test[:,1], 'c':X_test[:,2]}
+#For 3D Visulaization
+features_train = {'a':X_train[:,0],'b':X_train[:,1]}
+features_test  = {'a':X_test[:,0], 'b':X_test[:,1]}
+
 
 # Creating an Input function which would return a batch dataset on every call
 def input_function(features, labels, batch_size):
@@ -85,14 +97,12 @@ plt.ylabel(y_lables[0])
 plt.xlabel('Samples')
 plt.show()
 
-'''
 if len(x_labels)==2:
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     xs = X_test[:,0]
     ys = X_test[:,1]
-    zs = y_test
-    ax.scatter(xs, ys, zs, c='r', marker='o')
+    ax.scatter(xs, ys, y_test, c='r', marker='o')
     ax.scatter(xs, ys, y_pred, c='b', marker='^')
     ax.set_xlabel(x_labels[0])
     ax.set_ylabel(x_labels[1])
@@ -107,7 +117,14 @@ if len(x_labels)==2:
     X = np.arange(min(xs), max(xs),(max(xs)-min(xs))/100)
     Y = np.arange(min(ys), max(ys),(max(ys)-min(ys))/100)
     X, Y = np.meshgrid(X, Y)
-    Z = lr.predict(np.concatenate((X.ravel().reshape(-1,1),Y.ravel().reshape(-1,1)),axis=1)).reshape(X.shape)
+    features_predict = {'a':X.ravel(), 'b':Y.ravel()}
+    predict_input_fn = tf.estimator.inputs.numpy_input_fn(features_predict, shuffle=False)
+    predict_results = model.predict(input_fn=predict_input_fn)
+    y_predicted = []
+    for prediction in predict_results:
+        y_predicted.append(prediction['predictions'])
+    y_pred = np.array(y_predicted).reshape(X.shape)
+    Z = y_pred
     
     from matplotlib import cm
     # Plot the surface.
@@ -120,7 +137,5 @@ if len(x_labels)==2:
     ax.set_ylabel(x_labels[1])
     ax.set_zlabel(y_lables[0])
     plt.show()
-'''
-
 
 #------------------------------ PREDICTION AND PLOTING ENDS--------------------------------#
