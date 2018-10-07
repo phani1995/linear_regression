@@ -11,6 +11,10 @@ Linear Regression is the process of fitting a line to the dataset.
 ## The Mathematics
 
 The equation of Line is
+$$
+y = m*x +c
+$$
+
 
 Where,
  y = dependent variable
@@ -25,15 +29,27 @@ There are various ways in which we can attain the values of m and c
 * Iterative approach
 
 In this post we are discussing Statistical approach. If you find the derivation too long you can take look ar final m and c formulas.
+
 We were given data, set of x and y values and we were asked to find a line which best fits that which means mathematically we should be able to fine the slope and c values of the line to describe the line.
+
 The derivation to the slope and intercept values of the line
+
 The equation of the Line is
+$$
+y=mx*c
+$$
+
 
 Which means for a particular value of x, let us say xi the value of y would be yi = m*xi + c
 For x1 value of x y1 value of y is obtained,
 For x2 value of x y2 value of y is obtained,
 And goes on 
-On summating all these values into one equation, it can be written as,
+
+On adding all these values into one equation, it can be written as,
+$$
+i=0nc+ i=0nxi*m=i=0nyi i=0nc
+$$
+
 
 
 The objective is to solve equation 1 and 2 to attain the values of c and m
@@ -107,8 +123,11 @@ The Code was written in three phases
 ## Imports 
 
 Numpy import for array processing, python doesn’t have built in array support. The feature of working with native arrays can be used in python with the help of numpy library.
+
 Pandas is a library of python used for working with tables, on importing the data, mostly data will be of table format, for ease manipulation of tables pandas library is imported
+
 Matplotlib is a library of python used to plot graphs, for the purpose of visualizing the results we would be plotting the results with the help of matplotlib library.
+
 Math library is import for calculating powers of numbers.
 
 ```python
@@ -130,7 +149,7 @@ dataset = pd.read_csv(r'..\\data\\auto_insurance.csv')
 
 On viewing the dataset, it contains of two columns X and Y where X is dependent variable and Y is Independent Variable
 
-X is an independent variable 
+![dataset .head()]()X is an independent variable 
 Y is dependent variable Inference
 For x-value of 7.6 ,157 y-value 
 for   x-value of 7.1 ,174 y-value
@@ -172,14 +191,78 @@ plt.ylabel(y_axis_label)
 plt.show()
 ```
 
-And goes on
+![Image of Graph]()
 
-Creating Dependent and Independent variables
+Each point on the plot is a data point showing the respective list price on x-axis and Best Price on y-axis
 
-The X Column from the dataset is extracted into an X variable of type numpy, similarly the y variable
+The X and Y attributes would vary based on dataset.
 
-X is an independent variable 
+## Splitting the data into training set and test set
 
-Y is dependent variable Inference
+We are splitting the whole dataset into training and test set where training set is used for fitting the line to data and test set is used to check how good the line if for the data.
 
-# 
+```python
+# Splitting the data into training set and test set
+X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.2)])
+y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.2)])
+```
+
+## The Training phase
+
+## Computing the values of sigma
+
+As per the derivation formula we are computing the values of sigma x sigma x^2 sigma y sigma x*y
+
+n is the number of terms in the dataset.
+
+```python
+# Computing the values of sigma
+sigma_X = sum(X_train)
+sigma_y = sum(y_train)
+sigma_xy = sum(np.multiply(X_train,y_train))
+sigma_X_square = sum(np.square(X_train))
+n = len(X_train)
+```
+
+## Computing the values of Slope and Intercept
+
+As our linear regression model requires a slope and intercept, we are computing their values using statistical formulas.
+
+```python
+# Computing the values of slope and intercept 
+m_numerator = (n*sigma_xy)-(sigma_X*sigma_y)
+m_denominator =  n*sigma_X_square - math.pow(sigma_X,2)
+m = m_numerator/m_denominator
+
+c_numerator = (sigma_y*sigma_X_square)-(sigma_xy*sigma_X)
+c_denominator = (n*sigma_X_square) - math.pow(sigma_X,2)
+c = c_numerator/c_denominator
+```
+
+## The Prediction phase
+
+## Predicting the Results
+
+By the knowing the slope and intercept values of linear regression model we are trying to predict the values of test data. Y_pred variable contains all the predicted y-values of the test x-values.
+
+```python
+# Predicting the Results
+y_pred = X_test*m + c
+```
+
+## Visualizing the Results
+
+As we have predicted the y-values for a set of x-values we are visualizing the results to check how good did our line fit for our predictions.
+
+The plot shows the red points are the data points are actual values where the blue line is the predictions.
+
+```python
+# Visualizing the Results
+plt.scatter(X_test,y_test,c='red')
+plt.plot(X_test,y_pred)
+plt.title(title)
+plt.xlabel(x_axis_label)
+plt.ylabel(y_axis_label)
+plt.show()
+```
+
