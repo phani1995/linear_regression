@@ -135,3 +135,51 @@ Y is dependent variable Inference
 For x-value of 7.6 ,157 y-value 
 for   x-value of 7.1 ,174 y-value
 And goes on
+
+
+
+## Creating Dependent and Independent variables
+
+The X Column from the dataset is extracted into an X variable of type numpy, similarly the y variable
+
+X is an independent variable 
+
+Y is dependent variable Inference
+
+```python
+# Creating Dependent and Independent variables
+X = dataset['X'].values
+y = dataset['Y'].values
+```
+
+On input 10 it would result in a pandas Series object
+
+So, values attribute is used to attain an numpy array
+
+## Visualizing the data
+
+The step is to just see how the dataset is 
+
+```python
+# Visualizing the data 
+title='Linear Regression on <Dataset>'
+x_axis_label = 'X-value < The corresponding attribute of X in dataset >'
+y_axis_label = 'y-value < The corresponding attribute of X in dataset >'
+plt.scatter(X,y)
+plt.title(title)
+plt.xlabel(x_axis_label)
+plt.ylabel(y_axis_label)
+plt.show()
+```
+
+And goes on
+
+Creating Dependent and Independent variables
+
+The X Column from the dataset is extracted into an X variable of type numpy, similarly the y variable
+
+X is an independent variable 
+
+Y is dependent variable Inference
+
+# 
