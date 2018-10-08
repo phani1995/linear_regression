@@ -267,5 +267,4 @@ plt.ylabel(y_axis_label)
 plt.show()
 ```
 
-![Image to be included]()
-
+![Image not found](/assets/images/linear-regression-using-tensorflow-images/image5.png)
