@@ -1,6 +1,9 @@
-# Linear Regression using Scikit Learn
+# Linear Regression Comparison between framework and scratch
 
 ![Image to be included](/assets/images/linear_regression_comparison_framework_vs_scratch_files/image1.png)
+
+# Objective
+Here there are code for liner regression from scratch and using scikit learn . The code is run on same dataset for the scratch written formula and scikitlearn class . We compare both the codes by visualizing the results.
 
 ## The Theory
 

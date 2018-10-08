@@ -33,9 +33,9 @@ y_lables = ['Profit']
 x_labels_categorical = ['State']
 
 # Squeezed 3D data for Visualization purpose
-#x_labels = random.sample(x_labels,2)
-#y_lables = ['Profit']
-#x_labels_categorical = []
+x_labels = random.sample(x_labels,2)
+y_lables = ['Profit']
+x_labels_categorical = []
 
 
 # Converting categorical data into one hot encoder
