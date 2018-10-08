@@ -1,8 +1,7 @@
 # Linear Regression from Scratch Statistical Approach
 
-
-
 ## The Theory
+![Image](/assets/images/linear-regression-from-scratch-statistical-approach-images/image1.png)
 
 Linear Regression is the process of fitting a line to the dataset.
 
@@ -15,16 +14,14 @@ $$
 y = m*x +c
 $$
 
-
-Where,
- y = dependent variable
- X = independent variable
+Where,\
+y = dependent variable\
+X = independent variable\
 C = intercept 
 
 The algorithm is trying to fit a line to the data by adjusting the values of m and c. Its Objective is to attain to a value of m such that for any given value of x it would be properly predicting the value of y.
 
 There are various ways in which we can attain the values of m and c 
-
 * Statistical approach
 * Iterative approach
 
@@ -32,6 +29,7 @@ In this post we are discussing Statistical approach. If you find the derivation 
 
 We were given data, set of x and y values and we were asked to find a line which best fits that which means mathematically we should be able to fine the slope and c values of the line to describe the line.
 
+<!-- maths starts from here need to be modified -->
 The derivation to the slope and intercept values of the line
 
 The equation of the Line is
@@ -83,34 +81,35 @@ The values of c and m are,
 
 
 We use the m and c formulas obtained in derivation in the code.
+<!--maths ends here -->
 
 ## The Dataset 
 
-Dataset consists of two columns namely X and y
+Dataset consists of two columns namely X and y\
 Where
 
-For List Price Vs. Best Price for a New GMC Pickup dataset
-X = List price (in $1000) for a GMC pickup truck
-Y = Best price (in $1000) for a GMC pickup truck
+For List Price Vs. Best Price for a New GMC Pickup dataset\
+X = List price (in $1000) for a GMC pickup truck\
+Y = Best price (in $1000) for a GMC pickup truck\
 The data is taken from Consumer’s Digest.
 
-For Fire and Theft in Chicago 
-X = fires per 100 housing units
-Y = thefts per 1000 population within the same Zip code in the Chicago metro area
+For Fire and Theft in Chicago \
+X = fires per 100 housing units\
+Y = thefts per 1000 population within the same Zip code in the Chicago metro area\
 The data is taken from U.S Commission of Civil Rights.
 
-For Auto Insurance in Sweden dataset
-X = number of claims
-Y = total payment for all the claims in thousands of Swedish Kronor
+For Auto Insurance in Sweden dataset\
+X = number of claims\
+Y = total payment for all the claims in thousands of Swedish Kronor\
 The data is taken from Swedish Committee on Analysis of Risk Premium in Motor Insurance.
 
-For Gray Kangaroos dataset
-X = nasal length (mm ¥10)
-Y = nasal width (mm ¥ 10)
-for a male gray kangaroo from a random sample of such animals
+For Gray Kangaroos dataset\
+X = nasal length (mm ¥10)\
+Y = nasal width (mm ¥ 10)\
+for a male gray kangaroo from a random sample of such animals\
 The data is taken from Australian Journal of Zoology, Vol. 28, p607-613.
 
-[Link to All Datasets]()
+[Link to All Datasets](http://college.cengage.com/mathematics/brase/understandable_statistics/7e/students/datasets/slr/frames/frame.html)
 
 ## The Code
 
@@ -149,10 +148,11 @@ dataset = pd.read_csv(r'..\\data\\auto_insurance.csv')
 
 On viewing the dataset, it contains of two columns X and Y where X is dependent variable and Y is Independent Variable
 
-![dataset .head()]()X is an independent variable 
-Y is dependent variable Inference
-For x-value of 7.6 ,157 y-value 
-for   x-value of 7.1 ,174 y-value
+![Image Not Found](/assets/images/linear-regression-from-scratch-statistical-approach-images/image2.png)\
+X is an independent variable \
+Y is dependent variable Inference\
+For x-value of 7.6 ,157 y-value \
+for   x-value of 7.1 ,174 y-value\
 And goes on
 
 
@@ -170,9 +170,8 @@ Y is dependent variable Inference
 X = dataset['X'].values
 y = dataset['Y'].values
 ```
-
-On input 10 it would result in a pandas Series object
-
+![Image Not Found](/assets/images/linear-regression-from-scratch-statistical-approach-images/image3.png)\
+On input 10 it would result in a pandas Series object\
 So, values attribute is used to attain an numpy array
 
 ## Visualizing the data
@@ -190,8 +189,7 @@ plt.xlabel(x_axis_label)
 plt.ylabel(y_axis_label)
 plt.show()
 ```
-
-![Image of Graph]()
+![Image Not Found](/assets/images/linear-regression-from-scratch-statistical-approach-images/image4.png)
 
 Each point on the plot is a data point showing the respective list price on x-axis and Best Price on y-axis
 
@@ -265,4 +263,5 @@ plt.xlabel(x_axis_label)
 plt.ylabel(y_axis_label)
 plt.show()
 ```
+![Image Not Found](/assets/images/linear-regression-from-scratch-statistical-approach-images/image5.png)
 

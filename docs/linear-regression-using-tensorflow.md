@@ -1,78 +1,61 @@
 # Linear Regression using Tensorflow
 
-![Image to be included]()
+![Image not found](/assets/images/linear-regression-using-tensorflow-images/image1.png)
 
-# The Theory
+## The Theory
 
 Linear Regression is the process of fitting a line to the dataset.
 
-# Single Variable Linear Regression
+## Single Variable Linear Regression
 
-# The Mathematics
+## The Mathematics
 
 The equation of Line is
 $$
 y = m*x +c
 $$
-Where,
-
- y = dependent variable
-
- X = independent variable
-
+Where,\
+y = dependent variable\
+X = independent variable\
 C = intercept 
 
 The algorithm is trying to fit a line to the data by adjusting the values of m and c. Its Objective is to attain to a value of m such that for any given value of x it would be properly predicting the value of y.
 
 There are various ways in which we can attain the values of m and c 
-
-1. Statistical approach
-2. Iterative approach
+* Statistical approach
+* Iterative approach
 
 Here we are using a scikit learn framework which internally uses iterative approach to attain the linear regression 
 
-# The Dataset 
+## The Dataset 
 
-Dataset consists of two columns namely X and y
-
+Dataset consists of two columns namely X and y\
 Where
 
-For List Price Vs. Best Price for a New GMC Pickup dataset
-
-X = List price (in $1000) for a GMC pickup truck
-
-Y = Best price (in $1000) for a GMC pickup truck
-
+For List Price Vs. Best Price for a New GMC Pickup dataset\
+X = List price (in $1000) for a GMC pickup truck\
+Y = Best price (in $1000) for a GMC pickup truck\
 The data is taken from Consumer’s Digest.
 
-For Fire and Theft in Chicago 
-
-X = fires per 100 housing units
-
-Y = thefts per 1000 population within the same Zip code in the Chicago metro area
-
+For Fire and Theft in Chicago \
+X = fires per 100 housing units \
+Y = thefts per 1000 population within the same Zip code in the Chicago metro area \
 The data is taken from U.S Commission of Civil Rights.
 
-For Auto Insurance in Sweden dataset
-
-X = number of claims
-
-Y = total payment for all the claims in thousands of Swedish Kronor
-
+For Auto Insurance in Sweden dataset\
+X = number of claims\
+Y = total payment for all the claims in thousands of Swedish Kronor\
 The data is taken from Swedish Committee on Analysis of Risk Premium in Motor Insurance.
 
-For Gray Kangaroos dataset
-
-X = nasal length (mm ¥10)
-
-Y = nasal width (mm ¥ 10)
-for a male gray kangaroo from a random sample of such animals
-
+For Gray Kangaroos dataset\
+X = nasal length (mm ¥10)\
+Y = nasal width (mm ¥ 10)\
+for a male gray kangaroo from a random sample of such animals\
 The data is taken from Australian Journal of Zoology, Vol. 28, p607-613.
 
 [Link to All Datasets](http://college.cengage.com/mathematics/brase/understandable_statistics/7e/students/datasets/slr/frames/frame.html)
 
-# The Code
+## The Code
 
 The Code was written in three phases
 
@@ -80,9 +63,9 @@ The Code was written in three phases
 2. Training
 3. Prediction and plotting
 
-# Data Preprocessing Phase
+## Data Preprocessing Phase
 
-# Imports
+## Imports
 
 Numpy import for array processing, python doesn’t have built in array support. The feature of working with native arrays can be used in python with the help of numpy library.
 
@@ -100,9 +83,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 ```
 
-
-
-# Reading the dataset from data
+## Reading the dataset from data
 
 In this line of code using the read_excel method of pandas library, the dataset has been imported from data folder and stored in dataset variable.
 
@@ -117,14 +98,12 @@ dataset = pd.read_csv(r'..\\data\\auto_insurance.csv')
 
 On viewing the dataset, it contains of two columns X and Y where X is dependent variable and Y is Independent Variable.
 
-![Image to be included]()
+![Image not found](/assets/images/linear-regression-using-tensorflow-images/image2.png)
 
-# Creating Dependent and Independent variables
+## Creating Dependent and Independent variables
 
-The X Column from the dataset is extracted into an X variable of type numpy, similarly the y variable
-
-X is an independent variable 
-
+The X Column from the dataset is extracted into an X variable of type numpy, similarly the y variable\
+X is an independent variable \
 Y is dependent variable Inference
 
 ```python
@@ -133,16 +112,14 @@ X = dataset['X'].values
 y = dataset['Y'].values
 ```
 
-![Image to be included]() 
+![Image not found](/assets/images/linear-regression-using-tensorflow-images/image3.png)
 
-On input 10 it would result in a pandas Series object
-
+On input 10 it would result in a pandas Series object\
 So, values attribute is used to attain an numpy array
 
-# Visualizing the data 
+## Visualizing the data 
 
-The step is to just see how the dataset is 
-
+The step is to just see how the dataset is \
 On visualization the data would appear something like this
 
 The X and Y attributes would vary based on dataset.
@@ -159,9 +136,9 @@ plt.ylabel(y_axis_label)
 plt.show()
 ```
 
-![Image to be included]()
+![Image not found](/assets/images/linear-regression-using-tensorflow-images/image4.png)
 
-# Splitting the data into training set and test set
+## Splitting the data into training set and test set
 
 We are splitting the whole dataset into training and test set where training set is used for fitting the line to data and test set is used to check how good the line if for the data.
 
@@ -171,7 +148,7 @@ X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.2)])
 y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.2)])
 ```
 
-# Reshaping the numpy arrays since the tensorflow model expects 2-D array in further code
+## Reshaping the numpy arrays since the tensorflow model expects 2-D array in further code
 
 In further the tensorflow learning model would be expecting a 2-D array of shape (length,1).
 
@@ -183,9 +160,9 @@ X_test = np.reshape(X_test,newshape = (-1,1)).astype('float32')
 y_test = np.reshape(y_test,newshape = (-1,1)).astype('float32')
 ```
 
-# Training Phase
+## Training Phase
 
-# Variables for training 
+## Variables for training 
 
 - Epochs: stands for how many time the whole data is put through on forward propagation and one backward propagation.
 - Learning Rate: is a hyperparameter in backpropagation algorithm to adjust the variables in graph based on loss obtained in forward propagation.
@@ -196,7 +173,7 @@ epochs = 1000
 learning_rate = 0.0001
 ```
 
-# Tensors to build the tensor graph
+## Tensors to build the tensor graph
 
 These tensors are created based on the line equation y = m*x + c.
 
@@ -213,7 +190,7 @@ c = tf.Variable(tf.ones(shape=(1,1),dtype=tf.float32),name='intercept')
 y_actual = tf.placeholder(tf.float32,shape = (None,1),name = 'y_actual_palceholder')
 ```
 
-# Equation of line in Tensorflow
+## Equation of line in Tensorflow
 
 Creating a graph using line equation
 
@@ -224,11 +201,12 @@ Creating a graph using line equation
 y_pred = tf.add(tf.matmul(X_tf,m),c)
 ```
 
-# Loss Function
+## Loss Function
 
 Loss is the deviation of predicted value from the ground truth.
 
 The loss is calculated as root mean square formula
+<!--maths to be modified-->
 $$
 xrms=1n(x12+x22+x32+…+xn2)
 $$
@@ -238,7 +216,7 @@ $$
 loss = tf.reduce_mean(tf.square((y_pred - y_actual)))
 ```
 
- # Creating Training step using Gradient Descent Optimizer
+## Creating Training step using Gradient Descent Optimizer
 
 * training_step: choosing an optimizer with learning rate and directing it to minimize loss function.
 
@@ -247,9 +225,7 @@ loss = tf.reduce_mean(tf.square((y_pred - y_actual)))
 training_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss)
 ```
 
-
-
-# Training 
+## Training 
 
 A tensorflow session is created and opened. All the variables are initialized in line 2. The training is run with help of for loop created in line 4 and training_step is run in line 5
 
@@ -264,7 +240,7 @@ with tf.Session() as sess:
         sess.run(training_step,feed_dict= {X_tf:X_train,y_actual:y_train})
 ```
 
-# Prediction Phase
+## Prediction Phase
 
 ## Predicting the Results (the tensorflow session is still active)
 
@@ -275,7 +251,7 @@ By having the values of slope and intercept tensors of linear regression model w
     y_predicted = sess.run(y_pred,feed_dict= {X_tf:X_test})
 ```
 
-# Visualizing the Results
+## Visualizing the Results
 
 As we have predicted the y-values for a set of x-values we are visualizing the results to check how good did our line fit for our predictions.
 
