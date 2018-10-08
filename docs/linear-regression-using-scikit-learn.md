@@ -1,5 +1,7 @@
 # Linear Regression using Scikit Learn
 
+![Image to be included](/assets/images/linear-regression-using-scikit-learn-images/download.jpg)
+
 ## The Theory
 
 Linear Regression is the process of fitting a line to the dataset.
