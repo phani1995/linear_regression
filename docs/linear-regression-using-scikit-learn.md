@@ -40,12 +40,12 @@ Y = Best price (in $1000) for a GMC pickup truck
 The data is taken from Consumer’s Digest.\
 For Fire and Theft in Chicago \
 X = fires per 100 housing units \
-Y = thefts per 1000 population within the same Zip code in the Chicago metro area \
+Y = thefts per 1000 population within the same Zip code in the Chicago metro area 
 
 The data is taken from U.S Commission of Civil Rights.\
 For Auto Insurance in Sweden dataset \
 X = number of claims \
-Y = total payment for all the claims in thousands of Swedish Kronor \
+Y = total payment for all the claims in thousands of Swedish Kronor 
 
 The data is taken from Swedish Committee on Analysis of Risk Premium in Motor Insurance. \
 For Gray Kangaroos dataset \
@@ -92,7 +92,7 @@ dataset = pd.read_csv(r'..\\data\\prices.csv')
 ```
 
 On viewing the dataset, it contains of two columns X and Y where X is dependent variable and Y is Independent Variable.\
-![image alt >](/assets/images/linear-regression-using-scikit-learn-images/image2.png)
+![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image2.png)\
 X is an independent variable \
 Y is dependent variable Inference\
 For x-value of 7.6 ,157 y-value \
@@ -110,7 +110,7 @@ Y is dependent variable Inference
 X = dataset['X'].values
 y = dataset['Y'].values
 ```
-![image alt >](/assets/images/linear-regression-using-scikit-learn-images/image3.png)
+![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image3.png)\
 On input 10 it would result in a pandas Series object\
 So, values attribute is used to attain an numpy array
 
@@ -130,8 +130,8 @@ plt.ylabel(y_axis_label)
 plt.show()
 ```
 
-On visualization the data would appear something like this
-![image alt >](/assets/images/linear-regression-using-scikit-learn-images/image4.png)
+On visualization the data would appear something like this\
+![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image4.png)\
 Each point on the plot is a data point showing the respective list \ price on x-axis and Best Price on y-axis. \
 The X and Y attributes would vary based on dataset.
 
@@ -156,7 +156,7 @@ y_train = np.reshape(y_train,newshape = (-1,1))
 X_test = np.reshape(X_test,newshape = (-1,1))
 y_test = np.reshape(y_test,newshape = (-1,1))
 ```
-![image alt >](/assets/images/linear-regression-using-scikit-learn-images/image5.png)
+![image alt >](/assets/images/linear-regression-using-scikit-learn-images/image5.png)\
 The code was just to convert a single dimensional array into a 2-D array where each element is an array
 
 ## The Training phase
@@ -199,6 +199,7 @@ plt.xlabel(x_axis_label)
 plt.ylabel(y_axis_label)
 plt.show()
 ```
+
 ![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image6.png)\
 Similarly,\
 Graph results for all the datasets\
@@ -206,4 +207,5 @@ Graph results for all the datasets\
 ![image alt >](/assets/images/linear-regression-using-scikit-learn-images/image8.png)
 ![image alt <](/assets/images/linear-regression-using-scikit-learn-images/image9.png)
 ![image alt <](/assets/images/linear-regression-using-scikit-learn-images/image10.png)
+
 There are certain outliers in Fire Theft graphs. Since, there is random parameter exits the results might not be the same for every execution of code.
