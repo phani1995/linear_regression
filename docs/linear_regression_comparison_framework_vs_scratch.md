@@ -1,6 +1,6 @@
 # Linear Regression using Scikit Learn
 
-![Image to be included](/assets/images/linear-regression-using-scikit-learn-images/image1.png)
+![Image to be included](/assets/images/linear_regression_comparison_framework_vs_scratch_files/image1.png)
 
 ## The Theory
 
@@ -103,7 +103,8 @@ dataset.head()
 
 
 <div>
-<style scoped>
+
+<!--style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -115,7 +116,8 @@ dataset.head()
     .dataframe thead th {
         text-align: right;
     }
-</style>
+</style-->
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -199,7 +201,7 @@ plt.show()
 ```
 
 
-![png](/assets/images/inear_regression_comparison_framework_vs_scratch_files/linear_regression_comparison_framework_vs_scratch_11_0.png)
+![png](/assets/images/linear_regression_comparison_framework_vs_scratch_files/linear_regression_comparison_framework_vs_scratch_11_0.png)
 
 
 # Splitting the data into training set and test set
@@ -309,7 +311,7 @@ plt.show()
 ```
 
 
-![png](assets/images/linear_regression_comparison_framework_vs_scratch_files/linear_regression_comparison_framework_vs_scratch_27_0.png)
+![png](/assets/images/linear_regression_comparison_framework_vs_scratch_files/linear_regression_comparison_framework_vs_scratch_27_0.png)
 
 
 
