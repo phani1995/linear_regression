@@ -72,14 +72,14 @@ Substituting the value of m in Equation 2
 <p align="center">
   <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image008.png">
 </p>
-Now only c is there in Equation 3, solving for c 
+Now only c is there in Equation 3, solving for c \
 Step1,
 <p align="center">
   <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image009.png">
 </p>
 Step2,
 <p align="center">
-  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image0010.png">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image010.png">
 </p>
 Step 3,
 <p align="center">
@@ -112,10 +112,10 @@ The value of m,
 
 The values of c and m are,
 <p align="center">
-  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image017.png">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image016.png">
 </p>
 <p align="center">
-  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image018.png">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image017.png">
 </p>
 
 
