@@ -11,7 +11,7 @@ Linear Regression is the process of fitting a line to the dataset.
 
 The equation of Line is
 <p align="center">
-  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image002.png">
+  <img src="/assets/images/linear_regression_comparison_framework_vs_scratch_files/image002.png">
 </p>
 
 Where,\
@@ -115,7 +115,7 @@ The values of c and m are,
   <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image016.png">
 </p>
 <p align="center">
-  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image017.png">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image012.png">
 </p>
 
 

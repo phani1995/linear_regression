@@ -14,9 +14,9 @@ Linear Regression is the process of fitting a line to the dataset.
 ## The Mathematics
 
 The equation of Line is
-$$
-y = m*x+c
-$$\
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image002.png">
+</p>
 Where,\
 y = dependent variable \
 X = independent variable \

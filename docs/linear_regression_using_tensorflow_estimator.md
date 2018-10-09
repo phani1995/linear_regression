@@ -7,7 +7,9 @@ Linear Regression is the process of fitting a line to the dataset.
 ## Single Variable Linear Regression
 ## The Mathematics
 The equation of Line is
-y= m*x+c
+<p align="center">
+  <img src="/assets/images/linear-regression-using-tensorflow-estimator-images/image002.png">
+</p>
 Where,\
 y = dependent variable\
 X = independent variable\
