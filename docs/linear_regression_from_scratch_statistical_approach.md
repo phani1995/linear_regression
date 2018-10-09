@@ -153,9 +153,9 @@ The data is taken from Australian Journal of Zoology, Vol. 28, p607-613.
 ## The Code
 
 The Code was written in three phases
-⦁	Data preprocessing phase
-⦁	Training
-⦁	Prediction and plotting
+* Data preprocessing phase
+* Training
+* Prediction and plotting
 
 ## The data preprocessing phase
 ## Imports 
