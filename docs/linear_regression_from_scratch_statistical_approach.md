@@ -10,9 +10,9 @@ Linear Regression is the process of fitting a line to the dataset.
 ## The Mathematics
 
 The equation of Line is
-$$
-y = m*x +c
-$$
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image002.png">
+</p>
 
 Where,\
 y = dependent variable\
@@ -33,10 +33,10 @@ We were given data, set of x and y values and we were asked to find a line which
 The derivation to the slope and intercept values of the line
 
 The equation of the Line is
-$$
-y=mx*c
-$$
 
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image003.png">
+</p>
 
 Which means for a particular value of x, let us say xi the value of y would be yi = m*xi + c
 For x1 value of x y1 value of y is obtained,
@@ -44,40 +44,79 @@ For x2 value of x y2 value of y is obtained,
 And goes on 
 
 On adding all these values into one equation, it can be written as,
-$$
-i=0nc+ i=0nxi*m=i=0nyi i=0nc
-$$
 
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image004.png">
+</p>
+
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image005.png">
+</p>
 
 
 The objective is to solve equation 1 and 2 to attain the values of c and m
 On solving the c term in Equation 1, it can also be written as,
 
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image006.png">
+</p>
+
 Rewriting it as,
+
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image007.png">
+</p>
 
 Substituting the value of m in Equation 2
 
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image008.png">
+</p>
 Now only c is there in Equation 3, solving for c 
 Step1,
-
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image009.png">
+</p>
 Step2,
-
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image0010.png">
+</p>
 Step 3,
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image011.png">
+</p>
 
 On multiplying both numerator and denominator by -1
-
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image012.png">
+</p>
 
 To calculate the value of m taking the value of c and substituting in Equation -1,
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image013.png">
+</p>
 
 Equation 4 have only one parameter m, so solving for m,
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image014.png">
+</p>
 
 On expanding RHS and cancelling terms, 
-
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image015.png">
+</p>
 The value of m,
-
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image016.png">
+</p>
 
 The values of c and m are,
-
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image017.png">
+</p>
+<p align="center">
+  <img src="/assets/images/linear-regression-from-scratch-statistical-approach-images/image018.png">
+</p>
 
 
 We use the m and c formulas obtained in derivation in the code.
