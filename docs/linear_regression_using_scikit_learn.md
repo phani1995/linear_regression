@@ -11,6 +11,7 @@ Linear Regression is the process of fitting a line to the dataset.
 ## The Mathematics
 
 The equation of Line is\
+
 <p align="center">
   <img src="/assets/images/linear-regression-using-scikit-learn-images/image002.png" />
 </p>
