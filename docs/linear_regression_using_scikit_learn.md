@@ -10,10 +10,10 @@ Linear Regression is the process of fitting a line to the dataset.
 
 ## The Mathematics
 
-The equation of Line is
-$$
-y = m*x+c
-$$\
+The equation of Line is\
+<p align="center">
+  <img src="/assets/images/linear-regression-using-scikit-learn-images/image002.png" />
+</p>
 Where,\
 y = dependent variable \
 X = independent variable \
@@ -200,9 +200,11 @@ plt.ylabel(y_axis_label)
 plt.show()
 ```
 
-![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image6.png)\
+![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image6.png)
+
 Similarly,\
-Graph results for all the datasets\
+Graph results for all the datasets
+
 ![image alt <](/assets/images/linear-regression-using-scikit-learn-images/image7.png)
 ![image alt >](/assets/images/linear-regression-using-scikit-learn-images/image8.png)
 ![image alt <](/assets/images/linear-regression-using-scikit-learn-images/image9.png)
