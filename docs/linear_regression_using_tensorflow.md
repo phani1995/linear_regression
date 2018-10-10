@@ -14,9 +14,9 @@ The equation of Line is
 <p align="center">
   <img src="/assets/images/linear-regression-using-tensorflow-images/image002.png">
 </p>
-Where,\
-y = dependent variable\
-X = independent variable\
+Where,<br/>
+y = dependent variable<br/>
+X = independent variable<br/>
 C = intercept 
 
 The algorithm is trying to fit a line to the data by adjusting the values of m and c. Its Objective is to attain to a value of m such that for any given value of x it would be properly predicting the value of y.
@@ -29,28 +29,28 @@ Here we are using a scikit learn framework which internally uses iterative appro
 
 ## The Dataset 
 
-Dataset consists of two columns namely X and y\
+Dataset consists of two columns namely X and y<br/>
 Where
 
-For List Price Vs. Best Price for a New GMC Pickup dataset\
-X = List price (in $1000) for a GMC pickup truck\
-Y = Best price (in $1000) for a GMC pickup truck\
+For List Price Vs. Best Price for a New GMC Pickup dataset<br/>
+X = List price (in $1000) for a GMC pickup truck<br/>
+Y = Best price (in $1000) for a GMC pickup truck<br/>
 The data is taken from Consumer’s Digest.
 
-For Fire and Theft in Chicago \
-X = fires per 100 housing units \
-Y = thefts per 1000 population within the same Zip code in the Chicago metro area \
+For Fire and Theft in Chicago <br/>
+X = fires per 100 housing units <br/>
+Y = thefts per 1000 population within the same Zip code in the Chicago metro area <br/>
 The data is taken from U.S Commission of Civil Rights.
 
-For Auto Insurance in Sweden dataset\
-X = number of claims\
-Y = total payment for all the claims in thousands of Swedish Kronor\
+For Auto Insurance in Sweden dataset<br/>
+X = number of claims<br/>
+Y = total payment for all the claims in thousands of Swedish Kronor<br/>
 The data is taken from Swedish Committee on Analysis of Risk Premium in Motor Insurance.
 
-For Gray Kangaroos dataset\
-X = nasal length (mm ¥10)\
-Y = nasal width (mm ¥ 10)\
-for a male gray kangaroo from a random sample of such animals\
+For Gray Kangaroos dataset<br/>
+X = nasal length (mm ¥10)<br/>
+Y = nasal width (mm ¥ 10)<br/>
+for a male gray kangaroo from a random sample of such animals<br/>
 The data is taken from Australian Journal of Zoology, Vol. 28, p607-613.
 
 [Link to All Datasets](http://college.cengage.com/mathematics/brase/understandable_statistics/7e/students/datasets/slr/frames/frame.html)
@@ -102,8 +102,8 @@ On viewing the dataset, it contains of two columns X and Y where X is dependent 
 
 ## Creating Dependent and Independent variables
 
-The X Column from the dataset is extracted into an X variable of type numpy, similarly the y variable\
-X is an independent variable \
+The X Column from the dataset is extracted into an X variable of type numpy, similarly the y variable<br/>
+X is an independent variable <br/>
 Y is dependent variable Inference
 
 ```python
@@ -114,12 +114,12 @@ y = dataset['Y'].values
 
 ![Image not found](/assets/images/linear-regression-using-tensorflow-images/image3.png)
 
-On input 10 it would result in a pandas Series object\
+On input 10 it would result in a pandas Series object<br/>
 So, values attribute is used to attain an numpy array
 
 ## Visualizing the data 
 
-The step is to just see how the dataset is \
+The step is to just see how the dataset is <br/>
 On visualization the data would appear something like this
 
 The X and Y attributes would vary based on dataset.
