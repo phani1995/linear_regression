@@ -19,17 +19,6 @@ Where,<br/>
 y = dependent variable<br/>
 X = independent variable<br/>
 
-The equation of Line is<br/>
-
-<p align="center">
-  <img src="/assets/images/linear-regression-using-scikit-learn-images/image002.png" />
-</p>
-
-Where,<br/>
-y = dependent variable <br/>
-X = independent variable <br/>
-C = intercept 
-
 The algorithm is trying to fit a line to the data by adjusting the values of m and c. Its Objective is to attain to a value of m such that for any given value of x it would be properly predicting the value of y.
 
 There are various ways in which we can attain the values of m and c 
