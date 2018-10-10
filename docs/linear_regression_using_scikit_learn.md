@@ -10,13 +10,13 @@ Linear Regression is the process of fitting a line to the dataset.
 
 ## The Mathematics
 
-The equation of Line is\
+The equation of Line is<br/>
 <p align="center">
   <img src="/assets/images/linear-regression-using-scikit-learn-images/image002.png" />
 </p>
-Where,\
-y = dependent variable \
-X = independent variable \
+Where,<br/>
+y = dependent variable<br/>
+X = independent variable<br/>
 C = intercept 
 
 The algorithm is trying to fit a line to the data by adjusting the values of m and c. Its Objective is to attain to a value of m such that for any given value of x it would be properly predicting the value of y.
@@ -31,27 +31,27 @@ Here we are using a scikit learn framework which internally uses iterative appro
 
 ## The Dataset 
 
-Dataset consists of two columns namely X and y\
-Where\
-For List Price Vs. Best Price for a New GMC Pickup dataset\
-X = List price (in $1000) for a GMC pickup truck\
+Dataset consists of two columns namely X and y<br/>
+Where<br/>
+For List Price Vs. Best Price for a New GMC Pickup dataset<br/>
+X = List price (in $1000) for a GMC pickup truck<br/>
 Y = Best price (in $1000) for a GMC pickup truck
 
-The data is taken from Consumer’s Digest.\
-For Fire and Theft in Chicago \
-X = fires per 100 housing units \
+The data is taken from Consumer’s Digest.<br/>
+For Fire and Theft in Chicago <br/>
+X = fires per 100 housing units <br/>
 Y = thefts per 1000 population within the same Zip code in the Chicago metro area 
 
-The data is taken from U.S Commission of Civil Rights.\
-For Auto Insurance in Sweden dataset \
-X = number of claims \
+The data is taken from U.S Commission of Civil Rights.<br/>
+For Auto Insurance in Sweden dataset <br/>
+X = number of claims <br/>
 Y = total payment for all the claims in thousands of Swedish Kronor 
 
-The data is taken from Swedish Committee on Analysis of Risk Premium in Motor Insurance. \
-For Gray Kangaroos dataset \
-X = nasal length (mm ¥10) \
-Y = nasal width (mm ¥ 10) \
-for a male gray kangaroo from a random sample of such animals\
+The data is taken from Swedish Committee on Analysis of Risk Premium in Motor Insurance. <br/>
+For Gray Kangaroos dataset <br/>
+X = nasal length (mm ¥10) <br/>
+Y = nasal width (mm ¥ 10) <br/>
+for a male gray kangaroo from a random sample of such animals<br/>
 The data is taken from Australian Journal of Zoology, Vol. 28, p607-613.
 
 [Link to All Datasets](http://college.cengage.com/mathematics/brase/understandable_statistics/7e/students/datasets/slr/frames/frame.html)
@@ -91,18 +91,18 @@ In this line of code using the read_excel method of pandas library, the dataset 
 dataset = pd.read_csv(r'..\\data\\prices.csv')
 ```
 
-On viewing the dataset, it contains of two columns X and Y where X is dependent variable and Y is Independent Variable.\
-![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image2.png)\
-X is an independent variable \
-Y is dependent variable Inference\
-For x-value of 7.6 ,157 y-value \
-for   x-value of 7.1 ,174 y-value\
+On viewing the dataset, it contains of two columns X and Y where X is dependent variable and Y is Independent Variable.<br/>
+![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image2.png)<br/>
+X is an independent variable <br/>
+Y is dependent variable Inference<br/>
+For x-value of 7.6 ,157 y-value <br/>
+for   x-value of 7.1 ,174 y-value<br/>
 And goes on
 
 ## Creating Dependent and Independent variables
 
-The X Column from the dataset is extracted into an X variable of type numpy, similarly the y variable \
-X is an independent variable \
+The X Column from the dataset is extracted into an X variable of type numpy, similarly the y variable <br/>
+X is an independent variable <br/>
 Y is dependent variable Inference
 
 ```python
@@ -110,8 +110,8 @@ Y is dependent variable Inference
 X = dataset['X'].values
 y = dataset['Y'].values
 ```
-![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image3.png)\
-On input 10 it would result in a pandas Series object\
+![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image3.png)<br/>
+On input 10 it would result in a pandas Series object<br/>
 So, values attribute is used to attain an numpy array
 
 ## Visualizing the data 
@@ -130,9 +130,9 @@ plt.ylabel(y_axis_label)
 plt.show()
 ```
 
-On visualization the data would appear something like this\
-![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image4.png)\
-Each point on the plot is a data point showing the respective list \ price on x-axis and Best Price on y-axis. \
+On visualization the data would appear something like this<br/>
+![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image4.png)<br/>
+Each point on the plot is a data point showing the respective list <br/> price on x-axis and Best Price on y-axis. <br/>
 The X and Y attributes would vary based on dataset.
 
 ## Splitting the data into training set and test set
@@ -156,7 +156,7 @@ y_train = np.reshape(y_train,newshape = (-1,1))
 X_test = np.reshape(X_test,newshape = (-1,1))
 y_test = np.reshape(y_test,newshape = (-1,1))
 ```
-![image alt >](/assets/images/linear-regression-using-scikit-learn-images/image5.png)\
+![image alt >](/assets/images/linear-regression-using-scikit-learn-images/image5.png)<br/>
 The code was just to convert a single dimensional array into a 2-D array where each element is an array
 
 ## The Training phase
@@ -202,7 +202,7 @@ plt.show()
 
 ![image alt <>](/assets/images/linear-regression-using-scikit-learn-images/image6.png)
 
-Similarly,\
+Similarly,<br/>
 Graph results for all the datasets
 
 ![image alt <](/assets/images/linear-regression-using-scikit-learn-images/image7.png)
