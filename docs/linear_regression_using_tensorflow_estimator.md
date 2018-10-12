@@ -1,6 +1,6 @@
 # Linear Regression using Tensorflow Estimator
 
-![Image not found](/assets/images/linear-regression-using-tensorflow-estimator-images/image1.png)
+![Image not found](/assets/images/linear-regression-using-tensorflow-estimator-images/title_image.png)
 
 ## The Theory
 Linear Regression is the process of fitting a line to the dataset.

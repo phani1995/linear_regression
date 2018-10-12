@@ -1,7 +1,7 @@
 # Linear Regression from Scratch Statistical Approach
 
 ## The Theory
-![Image](/assets/images/linear-regression-from-scratch-statistical-approach-images/image1.png)
+![Image](/assets/images/linear-regression-from-scratch-statistical-approach-images/title_image.png)
 
 Linear Regression is the process of fitting a line to the dataset.
 

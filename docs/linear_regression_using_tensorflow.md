@@ -1,6 +1,6 @@
 # Linear Regression using Tensorflow
 
-![Image not found](/assets/images/linear-regression-using-tensorflow-images/image1.png)
+![Image not found](/assets/images/linear-regression-using-tensorflow-images/title_image.png)
 
 ## The Theory
 
