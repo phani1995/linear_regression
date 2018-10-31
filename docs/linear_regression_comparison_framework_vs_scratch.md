@@ -213,8 +213,8 @@ We are splitting the whole dataset into training and test set where training set
 
 
 ```python
-X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.2)])
-y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.2)])
+X_train,X_test = np.split(X,indices_or_sections = [int(len(X)*0.8)])
+y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.8)])
 ```
 
 # Reshaping the numpy arrays since the scikit learn model expects 2-D array in further code
