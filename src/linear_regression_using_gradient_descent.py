@@ -8,6 +8,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import math
 
+from matplotlib.animation import FuncAnimation
+
 # Reading the dataset from data
 dataset = pd.read_csv(r'..\\data\\auto_insurance.csv')
 
@@ -19,6 +21,10 @@ y = dataset['Y'].values
 title='Linear Regression on <Dataset>'
 x_axis_label = 'X-value < The corresponding attribute of X in dataset >'
 y_axis_label = 'y-value < The corresponding attribute of X in dataset >'
+title='Linear Regression on Auto Insurance Sweden Dataset'
+x_axis_label = "Total Payment"
+y_axis_label = "Number of Claims"
+
 plt.scatter(X,y)
 plt.title(title)
 plt.xlabel(x_axis_label)
@@ -78,14 +84,12 @@ def gradient_decent(x_data,y_data,epochs,learning_rate,initial_slope,initial_int
     for epoch in range(epochs):
         slope  = slope - learning_rate*(gradient_slope(slope,intercept,x_data,y_data))
         intercept = intercept - learning_rate*(gradient_intercept(slope,intercept,x_data,y_data))
-        #print(slope)
-        #print(intercept)
         slope_history.append(slope)
         intercept_history.append(intercept)
     return (slope,intercept)
 
-epochs = 1000
-learning_rate = 0.0001
+epochs = 500
+learning_rate = 0.00001
 initial_slope = 0
 initial_intercept = 0
 
@@ -93,15 +97,11 @@ initial_intercept = 0
 m = slope
 c = intercept
 
-'''
-print(slope)
-print(intercept)     
+# These line to inspect the variation in slope and intercept
 plt.plot(slope_history)
-plt.plot(intercept_history)  
-#plt.legend()
-plt.show()      
-'''
- 
+plt.plot(intercept_history)
+plt.show()
+     
 #-------------------------------------- TRAINING ENDS  ------------------------------------#
 
 #------------------------------- PREDICTION AND PLOTING -----------------------------------#
@@ -112,10 +112,39 @@ y_pred = X_test*m + c
 # Visualizing the Results
 plt.scatter(X_test,y_test,c='red')
 plt.plot(X_test,y_pred)
+
 plt.title(title)
 plt.xlabel(x_axis_label)
 plt.ylabel(y_axis_label)
 plt.show()
+
+
+# Animation of Gradient Descent
+
+fig, ax = plt.subplots()
+xdata, ydata = [], []
+ln, = ax.plot([], [], 'b', animated=True)
+sc = plt.scatter(X_test,y_test,c='red',animated=True)
+
+def init():
+    ax.set_title(title)
+    plt.xlabel(x_axis_label)
+    plt.ylabel(y_axis_label)
+    ax.set_xlim(min(X_test)-10, max(X_test)+10)
+    ax.set_ylim(min(y_test)-10, max(y_test)+10)
+    return ln,
+
+def update(frame):
+    i = frame 
+    m = slope_history[i]
+    c = intercept_history[i]   
+    y_pred = X_test*m + c
+    ln.set_data(X_test, y_pred)
+    
+anim = FuncAnimation(fig, update, frames=range(len(slope_history)),init_func=init)
+anim.save('gradient_descent.gif', fps=30)
+plt.show()
+
 
 #------------------------------ PREDICTION AND PLOTING ENDS--------------------------------#
 
