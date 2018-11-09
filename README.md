@@ -13,23 +13,15 @@ Single variable Linear regression
 **linear regression using scikit learn**   
 This file would contain the code for linear regression using scikit learn framework
 
+[Link to script](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_scikit_learn.py)   
 
-Link to script :-
-[script not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_scikit_learn.py)   
+[Link to notebook](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_scikit_learn.ipynb) 
 
-Link to notebook:-
-[notbook not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_scikit_learn.ipynb) 
+[Link to documentation](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_using_scikit_learn.md)
 
-Link to documentation:-
-[docs not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_using_scikit_learn.md)
+[Blog Post](https://phanimadhusudhanthontepu.github.io/)
 
-Blog Post :-
-[Blog Post Not found]
-(https://phanimadhusudhanthontepu.github.io/)
-
-Medium Post :-
-[Medium Post Not found]
-(https://medium.com/@phani.madhusudhan)
+[Medium Post](https://medium.com/@phani.madhusudhan)
 
 **linear regression from scratch statistical approach**   
 This file would contain the code for linear regression coded from scratch.
@@ -78,7 +70,7 @@ This file would contain the code for linear regression using tensorflow framewor
 
 Link to script :-
 [script not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_tensorflow_estimator.py)  
- 
+
 Link to notebook:-
 [notebook not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_tensorflow_estimator.ipynb) 
 
