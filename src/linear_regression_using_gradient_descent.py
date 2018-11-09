@@ -39,6 +39,10 @@ y_train,y_test = np.split(y,indices_or_sections = [int(len(X)*0.8)])
 
 #--------------------------------------- TRAINING   ---------------------------------------#
 
+
+# Functions for caluculation of gradient descent
+
+# Function to caluculate mean square error
 def mean_square_error(slope,intercept,x_data,y_data):
     n = len(x_data)
     sum_of_squares = 0
@@ -49,7 +53,8 @@ def mean_square_error(slope,intercept,x_data,y_data):
         
     mean_square_error = math.sqrt(sum_of_squares/n)
     return mean_square_error
-        
+ 
+# Function to caluculate Gardient of slope at each intermidiatory iteration       
 def gradient_slope(slope,intercept,x_data,y_data):
     n = len(x_data)
     sum_of_gradients = 0
@@ -58,11 +63,10 @@ def gradient_slope(slope,intercept,x_data,y_data):
         y_actual = y_data[i]
         sum_of_gradients += x_data[i]*(y_actual-y_pred)
     sum_of_gradients = -1*sum_of_gradients
-    #print("sum of gradients",sum_of_gradients)
     gradient_slope = sum_of_gradients*(2/n)
-    #print("The Gradient slope value is",gradient_slope)
     return gradient_slope
 
+# Function to caluculate Gardient of intercept at each intermidiatory iteration       
 def gradient_intercept(slope,intercept,x_data,y_data):
     n = len(x_data)
     sum_of_gradients = 0
@@ -72,32 +76,45 @@ def gradient_intercept(slope,intercept,x_data,y_data):
         sum_of_gradients += -1 *(y_actual-y_pred)
     sum_of_gradients = -1*sum_of_gradients
     gradient_intercept = sum_of_gradients*(2/n)
-    #print("The Gradient Intercept value is ",gradient_intercept)
     return gradient_intercept
 
 
+
+# Gradient Decent function
 slope_history = []
 intercept_history = []
+loss_history = []
 def gradient_decent(x_data,y_data,epochs,learning_rate,initial_slope,initial_intercept):
     slope = initial_slope
     intercept = initial_intercept
     for epoch in range(epochs):
         slope  = slope - learning_rate*(gradient_slope(slope,intercept,x_data,y_data))
         intercept = intercept - learning_rate*(gradient_intercept(slope,intercept,x_data,y_data))
+        loss = mean_square_error(slope,intercept,x_data,y_data)
+        print("The loss obtained is %0.2f "%(loss))
+        loss_history.append(loss)
         slope_history.append(slope)
         intercept_history.append(intercept)
     return (slope,intercept)
 
+# Training 
+# Hyperparameters
 epochs = 500
 learning_rate = 0.00001
 initial_slope = 0
 initial_intercept = 0
 
 (slope,intercept) = gradient_decent(X_train,y_train,epochs = epochs,learning_rate=learning_rate,initial_slope = initial_slope,initial_intercept =initial_intercept)
-m = slope
-c = intercept
 
-# These line to inspect the variation in slope and intercept
+# The plot to inspect the decrease in loss
+plt.title("Loss Function")
+plt.plot(loss_history)
+plt.show()
+
+print('gif is created')
+
+
+# The plot to inspect the variation in slope and intercept
 plt.plot(slope_history)
 plt.plot(intercept_history)
 plt.show()
@@ -105,6 +122,9 @@ plt.show()
 #-------------------------------------- TRAINING ENDS  ------------------------------------#
 
 #------------------------------- PREDICTION AND PLOTING -----------------------------------#
+
+m = slope
+c = intercept
 
 # Predicting the Results
 y_pred = X_test*m + c
@@ -139,6 +159,8 @@ def update(frame):
     m = slope_history[i]
     c = intercept_history[i]   
     y_pred = X_test*m + c
+    loss = mean_square_error(m,c,X_test,y_pred)
+    ax.text(2,3,loss)
     ln.set_data(X_test, y_pred)
     
 anim = FuncAnimation(fig, update, frames=range(len(slope_history)),init_func=init)
