@@ -65,7 +65,7 @@ This file would contain the code for linear regression using tensorflow framewor
 [Medium Post ](https://medium.com/@phani.madhusudhan)
 
 
-**linear regression comparison framework vs scratch.md**   
+**linear regression comparison framework vs scratch**   
 This file would contain the code for linear regression using scikit learn framework and from scratch. The code compares both the results.
 
 [Script ](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_comparison_framework_vs_scratch.py)   
