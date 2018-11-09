@@ -13,11 +13,11 @@ Single variable Linear regression
 **linear regression using scikit learn**   
 This file would contain the code for linear regression using scikit learn framework
 
-[Link to script](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_scikit_learn.py)   
+[Script](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_scikit_learn.py)   
 
-[Link to notebook](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_scikit_learn.ipynb) 
+[Notebook](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_scikit_learn.ipynb) 
 
-[Link to documentation](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_using_scikit_learn.md)
+[Documentation](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_using_scikit_learn.md)
 
 [Blog Post](https://phanimadhusudhanthontepu.github.io/)
 
@@ -26,82 +26,54 @@ This file would contain the code for linear regression using scikit learn framew
 **linear regression from scratch statistical approach**   
 This file would contain the code for linear regression coded from scratch.
 
-Link to script :-
-[script not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_from_scratch_statistical_approach.py)   
 
-Link to notebook:-
-[notbook not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_from_scratch_statistical_approach.ipynb) 
+[Script](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_from_scratch_statistical_approach.py)   
+[Notebook](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_from_scratch_statistical_approach.ipynb) 
 
-Link to documentation:-
-[docs not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_from_scratch_statistical_approach.md)
+[Documentation](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_from_scratch_statistical_approach.md)
 
-Blog Post :-
-[Blog Post Not found]
-(https://phanimadhusudhanthontepu.github.io/)
+[Blog Post](https://phanimadhusudhanthontepu.github.io/)
 
-Medium Post :-
-[Medium Post Not found]
-(https://medium.com/@phani.madhusudhan)
+[Medium Post](https://medium.com/@phani.madhusudhan)
 
 
 **linear regression using tensorflow**   
 This file would contain the code for linear regression using tensorflow framework.
 
-Link to script :-
-[script not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_tensorflow.py)   
+[Script](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_tensorflow.py)   
 
-Link to notebook:-
-[notbook not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_tensorflow_estimator.ipynb) 
+[Notbook](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_tensorflow_estimator.ipynb) 
 
-Link to documentation:-
-[docs not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_using_tensorflow.md)
+[Documentation](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_using_tensorflow.md)
 
-Blog Post :-
-[Blog Post Not found]
-(https://phanimadhusudhanthontepu.github.io/)
+[Blog Post](https://phanimadhusudhanthontepu.github.io/)
 
-Medium Post :-
-[Medium Post Not found]
-(https://medium.com/@phani.madhusudhan)
+[Medium Post ](https://medium.com/@phani.madhusudhan)
 
 
 **linear regression using tensorflow estimator**   
 This file would contain the code for linear regression using tensorflow framework estimator class.
 
-Link to script :-
-[script not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_tensorflow_estimator.py)  
+[Script ](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_tensorflow_estimator.py)  
 
-Link to notebook:-
-[notebook not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_tensorflow_estimator.ipynb) 
+[Notebook ](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_tensorflow_estimator.ipynb) 
 
-Link to documentation:-
-[docs not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_using_tensorflow_estimator.md)
+[Documentation ](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_using_tensorflow_estimator.md)
 
-Blog Post :-
-[Blog Post Not found]
-(https://phanimadhusudhanthontepu.github.io/)
+[Blog Post ](https://phanimadhusudhanthontepu.github.io/)
 
-Medium Post :-
-[Medium Post Not found]
-(https://medium.com/@phani.madhusudhan)
+[Medium Post ](https://medium.com/@phani.madhusudhan)
 
 
 **linear regression comparison framework vs scratch.md**   
 This file would contain the code for linear regression using scikit learn framework and from scratch. The code compares both the results.
 
-Link to script :-
-[script not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_comparison_framework_vs_scratch.py)   
+[Script ](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_comparison_framework_vs_scratch.py)   
 
-Link to notebook:-
-[notebook not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_comparison_framework_vs_scratch.ipynb) 
+[Notebook ](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_comparison_framework_vs_scratch.ipynb) 
 
-Link to documentation:-
-[docs not found](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_comparison_framework_vs_scratch.md)
+[Documentation ](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/docs/linear_regression_comparison_framework_vs_scratch.md)
 
-Blog Post :-
-[Blog Post Not found]
-(https://phanimadhusudhanthontepu.github.io/)
+[Blog Post ](https://phanimadhusudhanthontepu.github.io/)
 
-Medium Post :-
-[Medium Post Not found]
-(https://medium.com/@phani.madhusudhan)
+[Medium Post ](https://medium.com/@phani.madhusudhan)
