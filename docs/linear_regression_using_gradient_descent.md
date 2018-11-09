@@ -1,4 +1,62 @@
 
+# Linear Regression using Gradient Descent from scratch
+
+![Image not found](/assets/images/linear_regression_using_gradient_descent_files/title_image.png)
+
+## The Theory
+Linear Regression is the process of fitting a line to the dataset.  
+
+Here we are using gradient decent optimization algorithm. The algorithm is coded from scratch for better understanding. 
+## Single Variable Linear Regression
+## The Mathematics
+The equation of Line is
+
+$$
+y = m*x+c
+$$
+
+Where,<br/>
+y = dependent variable<br/>
+X = independent variable<br/>
+C = intercept 
+
+The algorithm is trying to fit a line to the data by adjusting the values of m and c. Its Objective is to attain to a value of m such that for any given value of x it would be properly predicting the value of y.
+
+There are various ways in which we can attain the values of m and c
+* Statistical approach
+* Iterative approach
+
+Here we are using a scikit learn framework which internally uses iterative approach to attain the linear regression.
+## The Dataset 
+
+Dataset consists of two columns namely X and y
+Where<br/>
+
+For List Price Vs. Best Price for a New GMC Pickup dataset<br/>
+X = List price (in $1000) for a GMC pickup truck<br/>
+Y = Best price (in $1000) for a GMC pickup truck<br/>
+The data is taken from Consumer’s Digest.
+
+For Fire and Theft in Chicago <br/>
+X = fires per 100 housing units<br/>
+Y = thefts per 1000 population within the same Zip code in the Chicago metro area<br/>
+The data is taken from U.S Commission of Civil Rights.
+
+For Auto Insurance in Sweden dataset<br/>
+X = number of claims<br/>
+Y = total payment for all the claims in thousands of Swedish Kronor<br/>
+The data is taken from Swedish Committee on Analysis of Risk Premium in Motor Insurance.
+
+For Gray Kangaroos dataset<br/>
+X = nasal length (mm ¥10)<br/>
+Y = nasal width (mm ¥ 10)<br/>
+for a male gray kangaroo from a random sample of such animals<br/>
+The data is taken from Australian Journal of Zoology, Vol. 28, p607-613.
+
+[Link to All Datasets](http://college.cengage.com/mathematics/brase/understandable_statistics/7e/students/datasets/slr/frames/frame.html)
+
+# The Code
+
 # Imports
 Numpy import for array processing, python doesn’t have built in array support. The feature of working with native arrays can be used in python with the help of numpy library.
 
@@ -40,19 +98,6 @@ dataset.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -140,7 +185,7 @@ plt.show()
 ```
 
 
-![png](linear_regression_using_gradient_descent_files/linear_regression_using_gradient_descent_11_0.png)
+![png](/assets/images/linear_regression_using_gradient_descent_files/linear_regression_using_gradient_descent_11_0.png)
 
 
 # Splitting the data into training set and test set
@@ -809,11 +854,11 @@ plt.show()
     
 
 
-![png](linear_regression_using_gradient_descent_files/linear_regression_using_gradient_descent_23_1.png)
+![png](/assets/images/linear_regression_using_gradient_descent_files/linear_regression_using_gradient_descent_23_1.png)
 
 
 
-![png](linear_regression_using_gradient_descent_files/linear_regression_using_gradient_descent_23_2.png)
+![png](/assets/images/linear_regression_using_gradient_descent_files/linear_regression_using_gradient_descent_23_2.png)
 
 
 # Predicting the Results
@@ -845,7 +890,7 @@ plt.show()
 ```
 
 
-![png](linear_regression_using_gradient_descent_files/linear_regression_using_gradient_descent_27_0.png)
+![png](/assets/images/linear_regression_using_gradient_descent_files/linear_regression_using_gradient_descent_27_0.png)
 
 
 # Animation of Gradient Descent
@@ -887,7 +932,3 @@ print('gif is created')
 
     MovieWriter ffmpeg unavailable.
     
-
-
-![png](linear_regression_using_gradient_descent_files/linear_regression_using_gradient_descent_29_1.png)
-
