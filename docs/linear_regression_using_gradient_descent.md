@@ -7,6 +7,8 @@
 Linear Regression is the process of fitting a line to the dataset.  
 
 Here we are using gradient decent optimization algorithm. The algorithm is coded from scratch for better understanding. 
+
+![gif not found](/assets/images/linear_regression_using_gradient_descent_files/gradient_descent.gif)
 ## Single Variable Linear Regression
 ## The Mathematics
 The equation of Line is
