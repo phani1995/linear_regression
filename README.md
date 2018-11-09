@@ -13,7 +13,7 @@ Single variable Linear regression
 **linear regression using scikit learn**   
 This file would contain the code for linear regression using scikit learn framework
 
-[Script](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_scikit_learn.py)   
+[Script](../src/linear_regression_using_scikit_learn.py)   
 
 [Notebook](https://github.com/phanimadhusudhanthontepu/linear_regression/blob/master/src/linear_regression_using_scikit_learn.ipynb) 
 
