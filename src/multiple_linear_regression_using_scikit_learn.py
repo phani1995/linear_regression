@@ -12,22 +12,21 @@ from mpl_toolkits.mplot3d import  Axes3D
 
 
 # Reading the dataset from data
-'''
+
 # Concrete Dataset
-dataset = pd.read_csv(r'D:\Madhus_data\repositories\linear_regression\data\Concrete_Data_Yeh.csv')
+dataset = pd.read_csv(r'..\data\Concrete_Data_Yeh.csv')
 x_labels = ['cement','slag','flyash','water','superplasticizer','coarseaggregate','fineaggregate','age']
 y_lables = ['csMPa']
 x_labels_categorical = []
-
+'''
 # Squeezed 3D data for Visualization purpose
 x_labels = random.sample(x_labels,2)
 y_lables = ['csMPa']
 x_labels_categorical = []
-
 '''
 
 # 50_Startups dataset
-dataset = pd.read_csv(r'D:\Madhus_data\repositories\linear_regression\data\50_Startups.csv')
+dataset = pd.read_csv(r'..\data\50_Startups.csv')
 x_labels = ['R&D Spend', 'Administration', 'Marketing Spend']
 y_lables = ['Profit']
 x_labels_categorical = ['State']
